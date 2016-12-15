@@ -206,6 +206,8 @@ img {
 }
 /*end reset*/
 
+#loading_spinner { display:none; }
+
 body {
     font-family: 'Droid Sans', sans-serif;
     font-size: 100%;
@@ -332,6 +334,15 @@ input[type="password"]:hover {
 }
 .sair{
 	float: right;
+    font-size: 16px;
+    color: #999;
+    font-weight: 400;
+    font-family: 'Droid Sans', sans-serif;
+    margin-top: 15px;
+    margin-left: 21px;
+}
+.info-text{
+	float: left;
     font-size: 16px;
     color: #999;
     font-weight: 400;

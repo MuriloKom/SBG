@@ -206,8 +206,6 @@ img {
 }
 /*end reset*/
 
-#loading_spinner { display:none; }
-
 body {
     font-family: 'Droid Sans', sans-serif;
     font-size: 100%;

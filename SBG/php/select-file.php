@@ -7,6 +7,9 @@ session_regenerate_id();
 <HTML>
    <HEAD>
       <TITLE>Selecionar</TITLE>
+	  <script type="text/javascript">
+      document.write("\<script src='//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js' type='text/javascript'>\<\/script>");
+	  </script>
       <LINK HREF="http://fonts.googleapis.com/css?family=Droid+Sans"
          REL="stylesheet" TYPE="text/css">
       <LINK HREF="/css/loginform.css" MEDIA="all" REL="stylesheet"
@@ -33,12 +36,14 @@ session_regenerate_id();
 				 $i = 0;
 				 while(!empty($_SESSION['file'][$i])) 
 				 {
-				 echo '<LI><INPUT TYPE="checkbox" NAME="filecheck[]" VALUE="'.$_SESSION['file'][$i].'"/>'.$_SESSION['file'][$i].'</LI>';
+				 echo '<LI><INPUT CLASS="single-checkbox" TYPE="checkbox" NAME="filecheck[]" VALUE="'.$_SESSION['file'][$i].'"/>'.$_SESSION['file'][$i].'</LI>';
 				 $i++;
 				 }
 				?>
 				</OL>
 			   </DIV>
+			   <H4 CLASS="info-text"> Obs: é possível selecionar no máximo 5 gravações por vez.</H4>
+			   <BR>
 			   <DIV CLASS="submit">
                <INPUT ONCLICK="myFunction()" TYPE="submit" VALUE="Enviar por e-mail"> 
                <H4 CLASS="sair"><A HREF="search-input.php">Voltar</A></H4>
@@ -65,5 +70,16 @@ session_regenerate_id();
          });
          });
       </SCRIPT> 
+	  <SCRIPT>
+	  jQuery(function(){
+		var max = 5;
+		var checkboxes = $('input[type="checkbox"]');
+
+		checkboxes.change(function(){
+			var current = checkboxes.filter(':checked').length;
+			checkboxes.filter(':not(:checked)').prop('disabled', current >= max);
+		});
+	  });
+	  </SCRIPT>
    </BODY>
 </HTML>

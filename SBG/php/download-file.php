@@ -11,6 +11,23 @@ session_regenerate_id();
 
 // Declaração de Variáveis
 $fileCount = 0;
+$errmsg = false;
+
+//Verifica se pelo menos uma gravação foi selecionada
+if(empty($_POST['filecheck']))
+{
+	$errmsg  = 'Pelo menos uma gravação deve ser selecionada!';
+    $errflag = true;
+}
+
+//Caso flag de erro seja verdadeira, retorno mensagem de erro à página anterior
+if($errflag)
+{
+	$_SESSION['ERRMSG'] = $errmsg;
+    session_write_close();
+    header("location: select-file.php");
+    exit();
+}
 
 // Define tempo de timeout do PHP
 set_time_limit(300);
@@ -28,8 +45,8 @@ $ssh->setTimeout(1);
 // Apaga todos os arquivos da pasta do usuário para evitar acúmulo,
 // visto que a pasta deve ser utilizada apenas para armazenamento
 // das gravações selecionadas até o envio delas por e-mail
-$command = "rm " . $_SESSION['userPath'] . "/* -f";
-$ssh->exec($command);
+/*$command = "rm " . $_SESSION['userPath'] . "/* -f";
+$ssh->exec($command);*/
 
 // As gravações selecionadas são copiadas uma a uma para a pasta do usuário
 foreach($_POST['filecheck'] as $file)

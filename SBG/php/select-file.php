@@ -66,6 +66,15 @@ session_regenerate_id();
             <H4 CLASS="sair"><A HREF="search-input.php">Voltar</A></H4>
             <DIV CLASS="clear"> 
             </DIV>
+			<BR>
+			<!--Se variável ERRMSG estiver setada, mostra a mensagem de erro armazenada nela-->
+            <?PHP
+            if(isset($_SESSION['ERRMSG'])) {
+            echo '<p align="center" CLASS="errmsg">'.$_SESSION['ERRMSG'].'</p>';
+            }
+            unset($_SESSION['ERRMSG']);
+            session_write_close();
+            ?>
         </FORM>
         </DIV>
       </DIV>

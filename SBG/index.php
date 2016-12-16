@@ -17,12 +17,10 @@ session_regenerate_id();
    <HEAD>
       <!--Nome exibido na aba do navegador-->
       <TITLE >Portal</TITLE>
-      <!--NavegaÃ§Ã£o Responsiva: permite ajustar a pÃ¡gina conforme tamanho da tela-->
-      <!--"<META name="viewport" content="width=device-width, initial-scale=1">-->
       <!--Busca fonte para o texto-->
       <LINK HREF="http://fonts.googleapis.com/css?family=Droid+Sans"
          REL="stylesheet" TYPE="text/css">
-      <!--Adiciona o arquivo loginform.css-->
+      <!--Adiciona o arquivo loginform.css que contém os estilos utilizados-->
       <LINK HREF="/css/loginform.css" MEDIA="all" REL="stylesheet"
          TYPE="text/css" />
       <!--Compatibilidade com caracteres especiais-->	 
@@ -40,7 +38,8 @@ session_regenerate_id();
                <DIV CLASS="alert-close"> 
                </DIV>
             </DIV>
-            <!--FormulÃ¡rio de Login-->
+            <!--Formulário de Login-->
+			<!--Ao ser enviado, redireciona para a página checklogin.php. No momento do envio, verifica se os termos de uso foram aceitos-->
             <FORM ID="form" METHOD="post" ACTION="/php/checklogin.php"
                ONSUBMIT="if(document.getElementById('agree').checked) { return true; } else { alert('Voce deve ler e aceitar os Termos de Uso para continuar.'); return false; }">
                <LI>
@@ -63,14 +62,14 @@ session_regenerate_id();
 			   <LI CLASS="checkbox">
 				  <INPUT TYPE="checkbox" NAME="checkbox" VALUE="check" ID="agree"/>Eu li e aceito os <A HREF="/pdf/Termos_de_Uso_Portinho.pdf">Termos de Uso</A>.  
                </LI>				  
-               <!--BotÃ£o Entrar-->
+               <!--Botão Entrar-->
                <DIV CLASS="submit">
                <INPUT ONCLICK="myFunction()" TYPE="submit" VALUE="Entrar"> 
                <H4><A HREF="/php/change-password.php">Alterar minha senha</A></H4>
                <DIV CLASS="clear"> 
                </DIV>
                <BR>
-                  <!--Se variÃ¡vel ERRMSG estiver setada, mostra a mensagem de erro armazenada nela-->
+                  <!--Se variável ERRMSG estiver setada, mostra a mensagem de erro armazenada nela-->
                   <?PHP
                      if(isset($_SESSION['ERRMSG'])) {
                      echo '<p align="center" CLASS="errmsg">'.$_SESSION['ERRMSG'].'</p>';

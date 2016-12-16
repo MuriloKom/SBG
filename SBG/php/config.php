@@ -1,4 +1,4 @@
-<!--Define as variáveis globais do BD-->
+<!--Define as variáveis globais->
 <?php
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');

@@ -1,7 +1,8 @@
 <?php
-//Inicia a sessÃ£o
+// Inicia a sessão
 session_start();
-//Verifica se a variÃ¡vel SESS_MEMBER_ID estÃ¡ setada ou nÃ£o
+
+// Verifica se a variável SESS_MEMBER_ID está setada ou não. Caso não, retorna acesso negado
 if (empty($_SESSION['SESS_MEMBER_ID']))
 {
   $errmsg = 'Acesso negado.';

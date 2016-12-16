@@ -45,8 +45,8 @@ $ssh->setTimeout(1);
 // Apaga todos os arquivos da pasta do usuário para evitar acúmulo,
 // visto que a pasta deve ser utilizada apenas para armazenamento
 // das gravações selecionadas até o envio delas por e-mail
-/*$command = "rm " . $_SESSION['userPath'] . "/* -f";
-$ssh->exec($command);*/
+$command = "rm " . $_SESSION['userPath'] . "/* -f";
+$ssh->exec($command);
 
 // As gravações selecionadas são copiadas uma a uma para a pasta do usuário
 foreach($_POST['filecheck'] as $file)

@@ -35,8 +35,8 @@ if ($errflag)
 switch ($targetServer)
 {
   case 'hdexterno':
-    $_SESSION['path'] = "/folder/folder/"; // Variável para armazenar o caminho onde estão salvas as gravações
-    $_SESSION['targetAddress'] = "192.x.x.x"; // Variável para armazenar o IP do servidor alvo
+    $_SESSION['path'] = "/mnt/hdextrno"; // Variável para armazenar o caminho onde estão salvas as gravações
+    $_SESSION['targetAddress'] = "192.168.20.179"; // Variável para armazenar o IP do servidor alvo
     break;
   case 'storage01':
 	$_SESSION['path'] = "/dados";

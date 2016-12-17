@@ -11,13 +11,13 @@ session_regenerate_id();
 
 // Declaração de Variáveis
 $fileCount = 0;
-$errmsg = false;
+$errflag = FALSE;
 
 //Verifica se pelo menos uma gravação foi selecionada
 if(empty($_POST['filecheck']))
 {
 	$errmsg  = 'Pelo menos uma gravação deve ser selecionada!';
-    $errflag = true;
+    $errflag = TRUE;
 }
 
 //Caso flag de erro seja verdadeira, retorno mensagem de erro à página anterior

@@ -42,7 +42,7 @@ session_regenerate_id();
           <P CLASS="input-id" ALIGN="left">Buscar em:</P>
 		  <!--Lista suspensa para seleção do servidor-->	 
           <SELECT NAME="targetServer" REQUIRED>
-            <!--<OPTION VALUE="hdexterno">HD Externo</OPTION>-->
+            <OPTION VALUE="hdexterno">HD Externo</OPTION>
             <OPTION VALUE="storage01">Storage 01</OPTION>
             <OPTION VALUE="storage02">Storage 02</OPTION>
           </SELECT>

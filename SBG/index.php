@@ -16,7 +16,7 @@ session_regenerate_id();
 <HTML>
    <HEAD>
       <!--Nome exibido na aba do navegador-->
-      <TITLE >Portal</TITLE>
+      <TITLE >Sistema de Busca de Gravações</TITLE>
       <!--Busca fonte para o texto-->
       <LINK HREF="http://fonts.googleapis.com/css?family=Droid+Sans"
          REL="stylesheet" TYPE="text/css">
@@ -60,7 +60,7 @@ session_regenerate_id();
                </LI>
                   <!--Campo Termos de Uso-->
 			   <LI CLASS="checkbox">
-				  <INPUT TYPE="checkbox" NAME="checkbox" VALUE="check" ID="agree"/>Eu li e aceito os <A HREF="/pdf/Termos_de_Uso_Portinho.pdf">Termos de Uso</A>.  
+				  <INPUT TYPE="checkbox" NAME="checkbox" VALUE="check" ID="agree"/>Eu li e aceito os <A HREF="/pdf/Termos_de_Uso_SBG.pdf">Termos de Uso</A>.  
                </LI>				  
                <!--Botão Entrar-->
                <DIV CLASS="submit">
@@ -84,10 +84,11 @@ session_regenerate_id();
       </DIV>
       <!---Footer--->
       <DIV CLASS="footer">
-         <BR> 
-		 <BR>		 
+         <BR> 		 
          <P>  
             Portinho Advogados - Sistema de Busca de Gravações 
+		 <BR>
+		    Design by W3layouts
          </P>
       </DIV>
       <!--Efeitos JavaScript-->

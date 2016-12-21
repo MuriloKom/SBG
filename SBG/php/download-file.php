@@ -13,6 +13,15 @@ session_regenerate_id();
 $fileCount = 0;
 $errflag = FALSE;
 
+// Conexão ao Servidor MySQL
+$con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE);
+
+// Verifica se a conexão foi bem sucedida
+if (!$con)
+{
+    die('Erro ao conectar ao servidor: ' . mysqli_error());
+}
+
 //Verifica se pelo menos uma gravação foi selecionada
 if(empty($_POST['filecheck']))
 {
@@ -55,6 +64,8 @@ foreach($_POST['filecheck'] as $file)
 	$ssh->exec($command);
 }
 
+$downloaded = implode(", ", $_POST['filecheck']);
+
 // Desconecta do servidor
 $ssh->_disconnect(NET_SSH2_DISCONNECT_BY_APPLICATION);
 
@@ -81,6 +92,12 @@ if ((count($_POST['filecheck'])) == $fileCount)
 {
 	$command = 'cd ' . $_SESSION['userPath'] . '; zip gravacao.zip *.WAV *.vox && uuencode gravacao.zip gravacao.zip | mail -s "Arquivo de Gravação" ' . $_SESSION['userEmail'];
 	$ssh->exec($command);
+	
+	// Faz query de INSERT para criação de log de pesquisa
+	$qry = "INSERT INTO log (usuario, tipo, arquivos_afetados, ip_origem) VALUES ('".$_SESSION['user']."', 'download', '".$downloaded."', '".$_SERVER['REMOTE_ADDR']."')";
+			
+	mysqli_query($con, $qry) or die($qry . "<br/><br/>" . mysqli_error());	
+	
 	$_SESSION['ERRMSG'] = "As gravações foram enviadas ao seu e-mail!";
 	header("location: search-input.php");
 }

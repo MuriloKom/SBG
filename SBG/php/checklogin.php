@@ -7,7 +7,7 @@ session_start();
 include('config.php');
 
 // Flag de validação de erro
-$errflag = false;
+$errflag = FALSE;
 
 // Conexão ao Servidor MySQL
 $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE);
@@ -26,7 +26,7 @@ $password = mysqli_real_escape_string($con, $_POST['password']);
 if ($login == '' || $password == '' || empty($login) || empty($password))
 {
     $errmsg  = 'Todos os campos devem ser preenchidos!';
-    $errflag = true;
+    $errflag = TRUE;
 }
 
 // Se a flag de erro for verdadeira, redireciona para a página de login
@@ -56,6 +56,12 @@ if ($result)
 			// Caso não seja primeiro acesso, atribui as variáveis de sessão e redireciona para a página inicial do sistema
             if (!stripslashes($row['flag_primeiro_acesso']))
             {
+				// Faz query de INSERT para criação de log de acesso ao sistema
+				$qry = "INSERT INTO log (usuario, tipo, arquivos_afetados, ip_origem) VALUES ('".$login."', 'acesso', 0, '".$_SERVER['REMOTE_ADDR']."')";
+			
+				mysqli_query($con, $qry) or die($qry . "<br/><br/>" . mysqli_error());
+				
+				//Atribui variáveis de sessão que serão usadas pelo sistema
                 session_regenerate_id();
 				// ID único de sessão do usuário
                 $_SESSION['SESS_MEMBER_ID'] = $row['id'];

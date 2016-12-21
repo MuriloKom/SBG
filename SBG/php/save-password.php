@@ -7,13 +7,13 @@ session_start();
 include('config.php');
 
 // Flag de Validação de Erro
-$errflag = false;
+$errflag = FALSE;
 
 // Conexão ao Servidor MySQL
 $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE);
 
 // Verifica se a conexão foi bem sucedida
-if (!$con)
+if ( ! $con)
 {
     die('Erro ao conectar ao servidor: ' . mysqli_error($con));
 }
@@ -28,7 +28,7 @@ $newpassconf = mysqli_real_escape_string($con, $_POST['newpassconf']);
 if ($login == '' || $oldpass == '' || $newpass == '' || $newpassconf == '')
 {
     $errmsg  = 'Todos os campos devem ser preenchidos!';
-    $errflag = true;
+    $errflag = TRUE;
 }
 
 // Se a flag de erro for verdadeira, redireciona para a página de alteração de senha
@@ -41,7 +41,7 @@ if ($errflag)
 }
 
 // Verifica se os campos "Nova Senha" e "Confirmar Nova Senha" são iguais
-if ($newpass == $newpassconf)
+if ($newpass === $newpassconf)
 {
     // Query de autenticação do usuário   
     $qry    = "SELECT * FROM usuarios WHERE usuario='" . $login . "' AND senha = AES_ENCRYPT('" . $oldpass . "','" . DB_AES_KEYSTRING . "')";
@@ -66,24 +66,32 @@ if ($newpass == $newpassconf)
 			// Caso diferente, procede com a atualização da senha no BD
             else 
 			{
-			// Faz query de UPDATE para atualização da senha
-            $qry = "UPDATE usuarios SET senha = AES_ENCRYPT('" . $newpass . "',
-			'" . DB_AES_KEYSTRING . "') WHERE usuario='" . $login . "'";
+				// Faz query de UPDATE para atualização da senha
+				$qry = "UPDATE usuarios SET senha = AES_ENCRYPT('" . $newpass . "',
+				'" . DB_AES_KEYSTRING . "') WHERE usuario='" . $login . "'";
 			
-            mysqli_query($qry) or die($qry . "<br/><br/>" . mysqli_error());
+				mysqli_query($con, $qry) or die($qry . "<br/><br/>" . mysqli_error());
 			
-			// Faz query de UPDATE para alteração da flag de primeiro acesso para 0
-            $qry = "UPDATE usuarios SET flag_primeiro_acesso = 0 WHERE usuario =
-			'" . $login . "'";
+				// Faz query de UPDATE para alteração da flag de primeiro acesso para 0
+				if ($row['flag_primeiro_acesso'])
+				{			
+					$qry = "UPDATE usuarios SET flag_primeiro_acesso = 0 WHERE usuario =
+					'" . $login . "'";
 			
-            mysqli_query($qry) or die($qry . "<br/><br/>" . mysqli_error());
+					mysqli_query($con, $qry) or die($qry . "<br/><br/>" . mysqli_error());
+				}
 			
-			//Salva mensagem de alteração de senha, encerra a escrita de sessão e redireciona para a tela de login
-            $errmsg             = 'Senha alterada com sucesso!';
-            $_SESSION['ERRMSG'] = $errmsg;
-            session_write_close();
-            header("location: /index.php");
-            exit();
+				// Faz query de INSERT para criação de log de alteração de senha
+				$qry = "INSERT INTO log (usuario, tipo, arquivos_afetados, ip_origem) VALUES ('".$login."', 'alt. senha', 0,'".$_SERVER['REMOTE_ADDR']."')";
+			
+				mysqli_query($con, $qry) or die($qry . "<br/><br/>" . mysqli_error());
+			
+				//Salva mensagem de alteração de senha, encerra a escrita de sessão e redireciona para a tela de login
+				$errmsg             = 'Senha alterada com sucesso!';
+				$_SESSION['ERRMSG'] = $errmsg;
+				session_write_close();
+				header("location: /index.php");
+				exit();
 			}
         }
 		// Caso query encontre mais de um resultado, retorna falha, pois usuários devem ser únicos

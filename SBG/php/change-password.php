@@ -10,7 +10,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <HTML>
   <HEAD>
 	<!--Nome exibido na aba do navegador-->
-    <TITLE>Portal</TITLE>
+    <TITLE>SBG - Alteração de Senha</TITLE>
 	<!--Busca fonte para o texto-->
     <LINK HREF="http://fonts.googleapis.com/css?family=Droid+Sans"
       REL="stylesheet" TYPE="text/css">
@@ -97,8 +97,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     </DIV>
     <!---Footer--->
     <DIV CLASS="footer-cp">
-      <P ALIGN="center">
-        <BR> Portinho Advogados - Portal de Acesso a Internet 
+      <P>  
+        Portinho Advogados - Sistema de Busca de Gravações 
+	    <BR>
+		Design by W3layouts
       </P>
     </DIV>
     <!--Efeitos JavaScript-->

@@ -16,7 +16,7 @@ session_regenerate_id();
 <HTML>
   <HEAD>
 	<!--Nome exibido na aba do navegador-->
-    <TITLE>Portal</TITLE>
+    <TITLE>SBG - Busca de Gravações</TITLE>
 	<!--Busca fonte para o texto-->
     <LINK HREF="http://fonts.googleapis.com/css?family=Droid+Sans"
       REL="stylesheet" TYPE="text/css">
@@ -43,7 +43,7 @@ session_regenerate_id();
 		  <!--Lista suspensa para seleção do servidor-->	 
           <SELECT NAME="targetServer" REQUIRED>
             <!--<OPTION VALUE="hdexterno">HD Externo</OPTION>-->
-            <!--<OPTION VALUE="storage01">Storage 01</OPTION>-->
+            <OPTION VALUE="storage01">Storage 01</OPTION>
             <OPTION VALUE="storage02">Storage 02</OPTION>
           </SELECT>
           <BR>
@@ -77,9 +77,12 @@ session_regenerate_id();
     </DIV>
     <!---Footer--->
     <DIV CLASS="footer-cp">
-      <P ALIGN="center">
-        <BR> Portinho Advogados - Sistema de Busca de Gravações 
+      <P>  
+        Portinho Advogados - Sistema de Busca de Gravações 
+	    <BR>
+		Design by W3layouts
       </P>
+    </DIV>
     </DIV>
     <!--Efeitos JavaScript-->
     <SCRIPT>var __links = document.querySelectorAll('a');function __linkClick(e) { parent.window.postMessage(this.href, '*');} ;for (var i = 0, l = __links.length; i < l; i++) {if ( __links[i].getAttribute('data-t') == '_blank' ) { __links[i].addEventListener('click', __linkClick, false);}}</SCRIPT>

@@ -16,7 +16,7 @@ session_regenerate_id();
 <HTML>
   <HEAD>
 	<!--Nome exibido na aba do navegador-->
-    <TITLE>Selecionar</TITLE>
+    <TITLE>SBG - Seleção de Gravações</TITLE>
 	<!--Link com JQuery-->
     <SCRIPT type="text/javascript">
       document.write("\<script src='//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js' type='text/javascript'>\<\/script>");
@@ -81,9 +81,12 @@ session_regenerate_id();
     </DIV>
     <!---Footer--->
     <DIV CLASS="footer-cp">
-      <P ALIGN="center">
-        <BR> Portinho Advogados - Sistema de Busca de Gravações 
+      <P>  
+        Portinho Advogados - Sistema de Busca de Gravações 
+	    <BR>
+		Design by W3layouts
       </P>
+    </DIV>
     </DIV>
     <!--Efeitos JavaScript-->
     <SCRIPT>var __links = document.querySelectorAll('a');function __linkClick(e) { parent.window.postMessage(this.href, '*');} ;for (var i = 0, l = __links.length; i < l; i++) {if ( __links[i].getAttribute('data-t') == '_blank' ) { __links[i].addEventListener('click', __linkClick, false);}}</SCRIPT>

@@ -7,7 +7,16 @@ include('config.php');                      // Inclui informações de conexão 
 session_regenerate_id();                    
 
 //Flag de validação de erro
-$errflag = false;
+$errflag = FALSE;
+
+// Conexão ao Servidor MySQL
+$con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE);
+
+// Verifica se a conexão foi bem sucedida
+if (!$con)
+{
+    die('Erro ao conectar ao servidor: ' . mysqli_error());
+}
 
 // Higieniza as entradas do usuário para evitar Shell Injection
 $targetFile   = escapeshellarg($_POST['targetFile']);
@@ -19,7 +28,7 @@ $targetServer = $_POST['targetServer'];
 if ($targetServer == '' || $targetFile == '' || empty($targetServer) || empty($targetFile))
 {
   $errmsg = 'Dados de pesquisa incompletos.';
-  $errflag = true;
+  $errflag = TRUE;
 }
 
 //Se a flag de erro for verdadeira, redireciona para a página de pesquisade login
@@ -65,13 +74,27 @@ $command = 'cd '.$_SESSION['path'].'; find -L *'.$targetFile.'*';
 $file = $ssh->exec($command);
 $ssh->disconnect();
 
-// Quebra cada item do resultado da busca e salva em um array
-$file = explode("\n", $file);
+// Faz query de INSERT para criação de log de pesquisa
+$qry = "INSERT INTO log (usuario, tipo, arquivos_afetados, ip_origem) 
+VALUES ('".$_SESSION['user']."', 'pesquisa', '".$_POST['targetFile']."', '".$_SERVER['REMOTE_ADDR']."')";
+			
+mysqli_query($con, $qry) or die($qry . "<br/><br/>" . mysqli_error());	
 
-// Salva o array em uma variável de sessão para ser utilizado na página de seleção de gravações
-$_SESSION['file'] = $file;
+if(strpos($file, 'find: ') !== FALSE)
+{
+	$_SESSION['ERRMSG'] = "A pesquisa não encontrou nenhuma gravação.";
+	header("location: search-input.php");	
+}
+else
+{
+	// Quebra cada item do resultado da busca e salva em um array
+	$file = explode("\n", $file);
 
-// Redireciona para a página de seleção de gravações
-header("location: select-file.php");
+	// Salva o array em uma variável de sessão para ser utilizado na página de seleção de gravações
+	$_SESSION['file'] = $file;
+
+	// Redireciona para a página de seleção de gravações
+	header("location: select-file.php");
+}
 ?>
 

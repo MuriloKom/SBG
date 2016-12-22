@@ -56,6 +56,7 @@ session_regenerate_id();
               ONFOCUS="this.value='';" TYPE="text"><A CLASS=" icon user"
               HREF="#"></A>
           </LI>
+		  <A CLASS="link" HREF="/pdf/manual_sbg.pdf">Manual de Uso.pdf</A>
           <DIV CLASS="submit">
             <INPUT ONCLICK="myFunction()" TYPE="submit" VALUE="Pesquisar"> 
             <H4 class="sair"><A HREF="logout.php">Sair</A></H4>

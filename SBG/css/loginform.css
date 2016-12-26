@@ -310,6 +310,12 @@ form li {
   background: url(../images/icons.png) no-repeat 7px 1px;
 }
 
+.link {	
+	text-align: left;
+	align: left;
+	float: left;
+}
+
 .lock {
   background: url(../images/icons.png) no-repeat -22px 1px;
 }
@@ -319,7 +325,7 @@ input[type="password"] {
   font-family: 'Droid Sans', sans-serif;
   width: 88%;
   padding: .6em 2em .5em .6em;
-  color: #B8B8B8;
+  color: #8e2c48;
   font-size: 18px;
   outline: none;
   background-color: #FFF;
@@ -339,13 +345,13 @@ select {
 
 input[type="text"]:hover,
 input[type="password"]:hover {
-  color: #8e2c48;
+  color: #999;
 }
 
 .submit h4 a {
   float: left;
   font-size: 16px;
-  color: #999;
+  color: #8e2c48;
   font-weight: 400;
   font-family: 'Droid Sans', sans-serif;
   margin-top: 15px;
@@ -355,7 +361,7 @@ input[type="password"]:hover {
 .sair {
   float: right;
   font-size: 16px;
-  color: #999;
+  color: #8e2c48;
   font-weight: 400;
   font-family: 'Droid Sans', sans-serif;
   margin-top: 15px;
@@ -365,7 +371,7 @@ input[type="password"]:hover {
 .info-text {
   float: left;
   font-size: 16px;
-  color: #999;
+  color: #8e2c48;
   font-weight: 400;
   font-family: 'Droid Sans', sans-serif;
   margin-top: 15px;
@@ -373,7 +379,7 @@ input[type="password"]:hover {
 }
 
 .submit h4 a:hover {
-  color: #8e2c48;
+  color: #999;
 }
 
 .sysmsg {
@@ -535,7 +541,7 @@ left:45%;
     font-family: 'Droid Sans', sans-serif;
     width: 73%;
     padding: .5em 3em .5em .5em;
-    color: #B8B8B8;
+    color: #8e2c48;
     font-size: 18px;
     outline: none;
     background-color: #FFF;
@@ -562,6 +568,29 @@ left:45%;
 
   .footer {
     left: 41%;
+  }
+  
+  input[type="text"],
+    input[type="password"] {
+    font-family: 'Droid Sans', sans-serif;
+    width: 73%;
+    padding: .5em 3em .5em .5em;
+    color: #8e2c48;
+    font-size: 18px;
+    outline: none;
+    background-color: #FFF;
+    border: none;
+  }
+
+  select {
+    font-family: 'Droid Sans', sans-serif;
+    width: 100%;
+    padding: .5em 3em .5em .5em;
+    color: #B8B8B8;
+    font-size: 16px;
+    outline: none;
+    background-color: #FFF;
+    border: none;
   }
 }
 
@@ -605,7 +634,7 @@ left:45%;
     font-family: 'Droid Sans', sans-serif;
     width: 73%;
     padding: .5em 3em .5em .5em;
-    color: #B8B8B8;
+    color: #8e2c48;
     font-size: 18px;
     outline: none;
     background-color: #FFF;
@@ -616,7 +645,7 @@ left:45%;
     font-family: 'Droid Sans', sans-serif;
     width: 73%;
     padding: .5em 3em .5em .5em;
-    color: #B8B8B8;
+    color: #8e2c48;
     font-size: 16px;
     outline: none;
     background-color: #FFF;

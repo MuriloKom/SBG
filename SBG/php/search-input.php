@@ -53,8 +53,7 @@ session_regenerate_id();
           <LI>
 			<!--Campo ID ou Telefone-->	 
             <INPUT NAME="targetFile"
-              ONFOCUS="this.value='';" TYPE="text"><A CLASS=" icon user"
-              HREF="#"></A>
+              ONFOCUS="this.value='';" TYPE="text"><P CLASS=" icon user"> </P>
           </LI>
 		  <A CLASS="link" HREF="/pdf/manual_sbg.pdf">Manual de Uso.pdf</A>
           <DIV CLASS="submit">
@@ -85,17 +84,5 @@ session_regenerate_id();
       </P>
     </DIV>
     </DIV>
-    <!--Efeitos JavaScript-->
-    <SCRIPT>var __links = document.querySelectorAll('a');function __linkClick(e) { parent.window.postMessage(this.href, '*');} ;for (var i = 0, l = __links.length; i < l; i++) {if ( __links[i].getAttribute('data-t') == '_blank' ) { __links[i].addEventListener('click', __linkClick, false);}}</SCRIPT>
-    <SCRIPT SRC="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></SCRIPT>
-    <SCRIPT>$(document).ready(function(c) {
-      $('.alert-close').on('click', function(c){
-      	$('.message').fadeOut('slow', function(c){
-        		$('.message').remove();
-      	});
-      });
-      });
-        
-    </SCRIPT> 
   </BODY>
 </HTML>

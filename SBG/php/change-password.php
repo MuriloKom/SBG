@@ -37,8 +37,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
           <LI>
 			<!--Campo Login-->	 
             <INPUT NAME="login" ONBLUR="if (this.value=='') {this.value='Login';}"
-              ONFOCUS="this.value='';" TYPE="text" VALUE="Login"><A CLASS=" icon user"
-              HREF="#"></A>
+              ONFOCUS="this.value='';" TYPE="text" VALUE="Login"><P CLASS=" icon user"> </P>
           </LI>
           <DIV CLASS="clear"> 
           </DIV>
@@ -47,8 +46,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<!--Campo Senha Atual-->	 
             <INPUT NAME="oldpass"
               ONBLUR="if (this.value=='') {this.value='Login';}"
-              ONFOCUS="this.value='';" TYPE="password" VALUE="Nova Senha"><A CLASS=" icon user"
-              HREF="#"></A>
+              ONFOCUS="this.value='';" TYPE="password" VALUE="Nova Senha"><P CLASS=" icon user"> </P>
           </LI>
           <DIV CLASS="clear"> 
           </DIV>
@@ -58,7 +56,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <INPUT NAME="newpass"
               ONBLUR="if (this.value=='') {this.value='Senha';}"
               ONFOCUS="this.value='';" TYPE="password" VALUE="Nova Senha"> 
-            <A CLASS="icon lock" HREF="#"></A> 
+            <P CLASS="icon lock"> </P> 
           </LI>
           <DIV CLASS="clear"> 
           </DIV>
@@ -70,7 +68,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <INPUT NAME="newpassconf"
               ONBLUR="if (this.value=='') {this.value='Senha';}"
               ONFOCUS="this.value='';" TYPE="password" VALUE="Nova Senha"> 
-            <A CLASS="icon lock" HREF="#"></A> 
+            <P CLASS="icon lock" > </P> 
           </LI>
           <DIV CLASS="submit">
 			<!--Botão "Alterar"-->	 
@@ -103,17 +101,5 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		Design by W3layouts
       </P>
     </DIV>
-    <!--Efeitos JavaScript-->
-    <SCRIPT>var __links = document.querySelectorAll('a');function __linkClick(e) { parent.window.postMessage(this.href, '*');} ;for (var i = 0, l = __links.length; i < l; i++) {if ( __links[i].getAttribute('data-t') == '_blank' ) { __links[i].addEventListener('click', __linkClick, false);}}</SCRIPT>
-    <SCRIPT SRC="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></SCRIPT>
-    <SCRIPT>$(document).ready(function(c) {
-      $('.alert-close').on('click', function(c){
-      	$('.message').fadeOut('slow', function(c){
-        		$('.message').remove();
-      	});
-      });
-      });
-        
-    </SCRIPT> 
   </BODY>
 </HTML>

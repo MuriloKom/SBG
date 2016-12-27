@@ -25,6 +25,8 @@ session_regenerate_id();
          TYPE="text/css" />
       <!--Compatibilidade com caracteres especiais-->	 
       <META CONTENT="text/html; charset=utf-8" HTTP-EQUIV="Content-Type" />
+	  <!--Favicon-->
+	  <link rel="shortcut icon" href="/favicon.ico" />
    </HEAD>
    <BODY ONLOAD="setFocus()">
       <!--Caixa de Login-->
@@ -35,7 +37,6 @@ session_regenerate_id();
          <DIV CLASS="inset">
             <DIV CLASS="login-head">
                <H1></H1>
-               <DIV CLASS="alert-close"> 
                </DIV>
             </DIV>
             <!--Formulário de Login-->
@@ -46,8 +47,7 @@ session_regenerate_id();
                   <!--Campo Login-->
                   <INPUT CLASS="text" NAME="username"
                      ONBLUR="if (this.value=='') {this.value='Acesso restrito a funcionários autorizados';}"
-                     ONFOCUS="this.value='';" TYPE="text" VALUE="Acesso restrito a funcionários autorizados"><A CLASS=" icon user"
-                     HREF="#"></A>
+                     ONFOCUS="this.value='';" TYPE="text" VALUE="Acesso restrito a funcionários autorizados"><P CLASS=" icon user"> </P>
                </LI>
                <DIV CLASS="clear"> 
                </DIV>
@@ -56,7 +56,7 @@ session_regenerate_id();
                   <INPUT NAME="password"
                      ONBLUR="if (this.value=='') {this.value='Senha';}"
                      ONFOCUS="this.value='';" TYPE="password" VALUE="Senha"> 
-                  <A CLASS="icon lock" HREF="#"></A> 
+                  <P CLASS="icon lock"> </P> 
                </LI>
                   <!--Campo Termos de Uso-->
 			   <LI CLASS="checkbox">
@@ -92,25 +92,6 @@ session_regenerate_id();
          </P>
       </DIV>
       <!--Efeitos JavaScript-->
-      <SCRIPT>
-         var __links = document.querySelectorAll('a');
-         function __linkClick(e) {    
-			parent.window.postMessage(this.href, '*');
-         };
-         for (var i = 0, l = __links.length; i < l; i++) {    
-			if ( __links[i].getAttribute('data-t') == '_blank' ) {
-				__links[i].addEventListener('click', __linkClick, false);    
-				}
-			}
-      </SCRIPT>   
       <SCRIPT SRC="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></SCRIPT>   
-      <SCRIPT>$(document).ready(function(c) {
-         $('.alert-close').on('click', function(c) {
-             $('.message').fadeOut('slow', function(c) {
-                 $('.message').remove();
-				});
-			});
-        });
-      </SCRIPT> 
    </BODY>
 </HTML>

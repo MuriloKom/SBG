@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : SBG
-Source Server Version : 50505
-Source Host           : localhost:3306
+Source Server         : AAA-Server
+Source Server Version : 50716
+Source Host           : 192.168.65.2:3306
 Source Database       : sbg
 
 Target Server Type    : MYSQL
-Target Server Version : 50505
+Target Server Version : 50716
 File Encoding         : 65001
 
-Date: 2016-12-20 13:33:15
+Date: 2016-12-27 16:38:00
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -30,7 +30,7 @@ PRIMARY KEY (`id`)
 )
 ENGINE=InnoDB
 DEFAULT CHARACTER SET=latin1 COLLATE=latin1_swedish_ci
-AUTO_INCREMENT=52
+AUTO_INCREMENT=1
 
 ;
 
@@ -66,13 +66,13 @@ AUTO_INCREMENT=12
 -- Records of usuarios
 -- ----------------------------
 BEGIN;
-INSERT INTO `usuarios` VALUES ('1', 'murilo.komirchuk', 0x020A673CBE6B4896D7D544309BCF291E, 'Murilo Nata Komirchuk de Jesus', 'ti.telecom@grupoportinho.com.br', '02658894309', 'TI', '', '\0'), ('2', 'abigail.moraes', 0x54FD1C9C8B1EF4D63B63C1636FF7CB9B, 'Abigail Paula de Moraes', 'ouvidoria@grupoportinho.com.br', '0', 'SAC', '', ''), ('3', 'alison.hernandes', 0x54FD1C9C8B1EF4D63B63C1636FF7CB9B, 'Alison Hernandes', 'monitoria@grupoportinho.com.br', '0', 'Monitoria', '', ''), ('4', 'camila.pereira', 0x54FD1C9C8B1EF4D63B63C1636FF7CB9B, 'Camila Pereira', 'monitoria@grupoportinho.com.br', '0', 'Monitoria', '', ''), ('5', 'carolina.donega', 0x54FD1C9C8B1EF4D63B63C1636FF7CB9B, 'Carolina Donega', 'monitoria@grupoportinho.com.br', '0', 'Monitoria', '', ''), ('6', 'clarice.laurino', 0x020A673CBE6B4896D7D544309BCF291E, 'Clarice Laurino', 'ouvidoria@grupoportinho.com.br', '0', 'SAC', '', '\0'), ('7', 'elida.oliveira', 0x54FD1C9C8B1EF4D63B63C1636FF7CB9B, 'Elida Oliveira', 'ouvidoria@grupoportinho.com.br', '0', 'SAC', '', ''), ('8', 'fernanda.pintor', 0xBCF83E201A4891B9CAF02A6AB615888C, 'Fernanda Pintor', 'fernanda.pintor@grupoportinho.com.br', '0', 'Supervisao', '', '\0'), ('9', 'franciele.oliveira', 0x54FD1C9C8B1EF4D63B63C1636FF7CB9B, 'Franciele Oliveira', 'monitoria@grupoportinho.com.br', '0', 'Monitoria', '', ''), ('10', 'rafael.silva', 0x54FD1C9C8B1EF4D63B63C1636FF7CB9B, 'Rafael Silva', 'ti.telecom@grupoportinho.com.br', '0', 'TI', '', ''), ('11', 'viviane.martins', 0x54FD1C9C8B1EF4D63B63C1636FF7CB9B, 'Viviane Martins', 'monitoria@grupoportinho.com.br', '0', 'Monitoria', '', '');
+INSERT INTO `usuarios` VALUES ('1', 'murilo.komirchuk', 0x0BC63B84EEFA90B3EABB37E7DC350A55, 'Murilo Nata Komirchuk de Jesus', 'ti.telecom@grupoportinho.com.br', '02658894309', 'TI', '', '\0'), ('2', 'abigail.moraes', 0x3141AD6119E59B3345B399B35F536931, 'Abigail Paula de Moraes', 'ouvidoria@grupoportinho.com.br', '0', 'SAC', '', '\0'), ('3', 'alison.hernandes', 0xFE3031215A32151EA6AE886F3F8C4727, 'Alison Hernandes', 'monitoria@grupoportinho.com.br', '0', 'Monitoria', '', '\0'), ('4', 'camila.pereira', 0xE9E211D22669538E49AD5B8D82BF7176, 'Camila Pereira', 'monitoria@grupoportinho.com.br', '0', 'Monitoria', '', '\0'), ('5', 'carolina.donega', 0x0BC63B84EEFA90B3EABB37E7DC350A55, 'Carolina Donega', 'monitoria@grupoportinho.com.br', '0', 'Monitoria', '', ''), ('6', 'clarice.laurino', 0xCCA296FBEA9C47A3B65BC22FB5466585, 'Clarice Laurino', 'ouvidoria@grupoportinho.com.br', '0', 'SAC', '', '\0'), ('7', 'elida.oliveira', 0x457EDE4F0BB8F22750D0BE71DC4CE353, 'Elida Oliveira', 'ouvidoria@grupoportinho.com.br', '0', 'SAC', '', '\0'), ('8', 'fernanda.pintor', 0x0BC63B84EEFA90B3EABB37E7DC350A55, 'Fernanda Pintor', 'fernanda.pintor@grupoportinho.com.br', '0', 'Supervisao', '', ''), ('9', 'franciele.oliveira', 0x5CD92FE7DB1AC2ADCDB8BF649CEDBE96, 'Franciele Oliveira', 'monitoria@grupoportinho.com.br', '0', 'Monitoria', '', '\0'), ('10', 'rafael.silva', 0x0BC63B84EEFA90B3EABB37E7DC350A55, 'Rafael Silva', 'ti.telecom@grupoportinho.com.br', '0', 'TI', '', ''), ('11', 'viviane.silva', 0xC76424A9B2E4BC0B8D718D875C73EA8C, 'Viviane Silva', 'monitoria@grupoportinho.com.br', '0', 'Monitoria', '', '\0');
 COMMIT;
 
 -- ----------------------------
 -- Auto increment value for log
 -- ----------------------------
-ALTER TABLE `log` AUTO_INCREMENT=52;
+ALTER TABLE `log` AUTO_INCREMENT=1;
 
 -- ----------------------------
 -- Auto increment value for usuarios

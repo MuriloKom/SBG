@@ -89,16 +89,7 @@ session_regenerate_id();
     </DIV>
     </DIV>
     <!--Efeitos JavaScript-->
-    <SCRIPT>var __links = document.querySelectorAll('a');function __linkClick(e) { parent.window.postMessage(this.href, '*');} ;for (var i = 0, l = __links.length; i < l; i++) {if ( __links[i].getAttribute('data-t') == '_blank' ) { __links[i].addEventListener('click', __linkClick, false);}}</SCRIPT>
     <SCRIPT SRC="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></SCRIPT>
-    <SCRIPT>$(document).ready(function(c) {
-      $('.alert-close').on('click', function(c){
-      	$('.message').fadeOut('slow', function(c){
-        		$('.message').remove();
-      	});
-      });
-      });
-    </SCRIPT> 
 	<!--Efeitos JQuery-->
     <SCRIPT>
       jQuery(function(){

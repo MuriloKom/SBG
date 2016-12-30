@@ -18,18 +18,18 @@ if (!$con)
     die('Erro ao conectar ao servidor: ' . mysqli_error());
 }
 
+// Verifica se há entradas vazias
+if (empty($_POST['targetServer']) || empty($_POST['targetFile']))
+{
+  $errmsg = 'Dados de pesquisa incompletos.';
+  $errflag = TRUE;
+}
+
 // Higieniza as entradas do usuário para evitar Shell Injection
 $targetFile   = escapeshellarg($_POST['targetFile']);
 
 // Variável para armazenar o servidor alvo
 $targetServer = $_POST['targetServer'];
-
-// Verifica se há entradas vazias
-if ($targetServer == '' || $targetFile == '' || empty($targetServer) || empty($targetFile))
-{
-  $errmsg = 'Dados de pesquisa incompletos.';
-  $errflag = TRUE;
-}
 
 //Se a flag de erro for verdadeira, redireciona para a página de pesquisade login
 if ($errflag)
@@ -44,7 +44,7 @@ if ($errflag)
 switch ($targetServer)
 {
   case 'hdexterno':
-    $_SESSION['path'] = "/mnt/hdextrno"; // Variável para armazenar o caminho onde estão salvas as gravações
+    $_SESSION['path'] = "/mnt/hdextrno/1"; // Variável para armazenar o caminho onde estão salvas as gravações
     $_SESSION['targetAddress'] = "192.168.20.179"; // Variável para armazenar o IP do servidor alvo
     break;
   case 'storage01':
